@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=&sensor=true">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(-34.397, 150.644),
+          zoom: 8
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+          var marker = new google.maps.Marker({
+        position: map.getCenter(),
+        icon: {
+          strokeColor: '#f04c5c',
+          path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+          scale: 2
+        },
+        draggable: true,
+        map: map
+        });
+
+        var myLatlng = new google.maps.LatLng(-35.397, 151.644);
+      var marker1 = new google.maps.Marker({
+        position: myLatlng,
+        icon: {
+          strokeColor: '#f04c5c',
+          path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+          scale: 4
+        },
+        draggable: true,
+        map: map
+        });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"/>
+  </body>
+</html>

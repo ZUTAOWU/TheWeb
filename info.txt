@@ -1,0 +1,46 @@
+We create this web page in pairs
+
+Developer1:
+
+Name: ZUTAO WU
+ID: n8975698
+
+Developer2:
+Name: Abdulraman Alhashimi	
+ID: n8655251
+
+--------------------------------------
+Our web page include contents as blow:
+
+1 search form
+
+2 sample results page
+
+3 sample individual page
+
+4 user registration page
+
+we use some advanced css3 and html5 to make a good appearance of whole web page.
+
+--------------------------------------
+We finish there add-on tasks
+
+1 maps
+
+ Show the maps in the home page and individual item page
+ click on the result in map, link to the individual item page
+ search users location
+
+2 Meta-data and micro-data
+
+ add meta data in home page and sample individual item page for Open graph protocol and Twitter cards
+ add micro data(place micro data and review micro data) in sample individual item page.
+
+ notice:
+ when we add the meta name="twitter:domain" we can pass the validation of twitter, but cannot pass the HTML5 validation. so we have remove this.
+
+3 Mobil-ready design
+
+ use another css(smallDevice.css) to show the page for small resolution device
+ use metadata to display intelligently on the user's home screen
+ we remake the whole menu to show perfectly on mobile device.

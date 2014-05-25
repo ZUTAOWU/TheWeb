@@ -1,0 +1,93 @@
+/*-----------------------------------------------------
+	This css is used for small resolution device
+	mainly change the display of menu
+-----------------------------------------------------*/
+.nav {
+	position: relative;
+}	
+.nav ul {
+	min-width: 180px;
+	background: #3A3A3A url('../image/icon-menu.png') no-repeat 10px 20px;
+}
+.nav li {
+	display: none; 
+	/* hide all <li> items */
+	margin: 0;
+	padding :0;
+	padding-left:30px;
+}
+.nav .current {
+	display: block; 
+	/* show only current <li> item */
+}
+.nav a {
+	display: block;
+	text-align: left;
+}
+.nav .current a {
+	background: none;
+}
+
+/* on nav hover */
+.nav ul:hover {
+	background-image: none;
+	box-shadow: 0px 2px 5px black;
+}
+.nav ul:hover li {
+	display: block;
+	border-bottom:1px solid #969696;
+}
+
+.nav ul:hover > a {
+	color:#f04c5c;
+}
+
+.nav ul:hover .current {
+}
+
+/* right nav */
+.nav.right ul {
+}
+
+/* center nav */
+.nav.center ul {
+	left: 50%;
+	margin-left: -90px;
+}
+
+.login {
+	display: none;
+}
+
+
+.left-box {
+	float:none;
+	margin: 0px 20px;
+	width:90%;
+}
+
+.right-box {
+	float:none;
+	margin: 0px 20px;
+	width:90%;
+}
+
+.search-box > span {
+	display:block;
+	margin-bottom:20px;
+}
+
+.search-main {
+	margin-top:100px;
+	margin-left:20px;
+	margin-right:20px;
+}
+
+.search-result {
+	margin:20px 20px;
+
+}
+
+.signup-box {
+	margin:20px 20px;
+}

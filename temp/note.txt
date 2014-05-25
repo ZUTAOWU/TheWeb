@@ -1,0 +1,85 @@
+div -> font-size:20px;
+
+// horizontal list
+.menu li {
+	display: inline;
+	list-style-type: none;
+}
+
+//div height vertically align
+height:30px;
+line-height: 30px;
+
+<link href="./style/style.css" rel="stylesheet" type="text/css"/>
+<script language="javascript" type="text/javascript" src="./js/main.js"></script>
+
+box-shadow: 10px(h) 10px(v) 5px(blue-distance) #888888;
+
+//make div stay at bottom
+<div main>
+	<div foot>
+<main>
+.main{
+	position:relative
+}
+.foot{
+	position:absolute;                 
+	bottom:0;                         
+    left:0;    
+}
+
+
+div auto adjust width with content
+display: table;
+It is by default a block
+
+//--------------------------
+keep footer at bottom
+<div id="holder">
+    <div id="header">Title</div>
+    <div id="body">Body</div>
+    <div id="footer">Footer</div>
+</div>
+html,body{
+    height: 100%
+}
+
+#header{
+    background-color: yellow;
+    height: 100px;
+    width: 100%;
+}
+
+#holder {
+    min-height: 100%;
+    position:relative;
+}
+
+#body {
+    min-height:200px;
+}
+
+#footer{
+    background-color: lime;
+    bottom: 0;
+    height: 100px;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+//--------------------------
+div vertical-align:middle in other div
+<div style="display:table;height:300px;text-align:center;">
+<div style="display:table-cell;vertical-align:middle;">
+<!–content–>
+</div>
+</div>  
+
+//---------------------------
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+
+<!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->

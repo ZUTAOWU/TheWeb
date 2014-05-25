@@ -1,0 +1,1 @@
+mysqldump -pmysql --user=root WEB > export.sql

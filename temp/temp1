@@ -1,0 +1,103 @@
+<div class="search-main">
+					<form>
+					<div class="search-box">
+						<span> Name: <input class="search-input-box" type="text" name="search-name" />
+						</span>
+						<span>
+						Suburb: <select class="search-select-box">
+								  <option value="Stafford">Stafford</option>
+								  <option value="Windsor">Windsor</option>
+								  <option value="City">City</option>
+								</select> 
+						</span>
+						<span>
+						Rate: <input type="radio" name="rate" value="1"/>1
+							  <input type="radio" name="rate" value="2"/>2
+							  <input type="radio" name="rate" value="3"/>3
+							  <input type="radio" name="rate" value="4"/>4
+						</span>
+						<div class="search-button">
+							<span class="button"> search </span>
+						</div>
+					</div>
+					</form>
+				</div>
+				<div class="search-result">
+					<div class="content">
+						<div class="content-head">
+							<a href="./content.html" >WIFI in Chermside</a>
+						</div>
+						<div class="content-main" itemscope itemtype="http://schema.org/Place">
+							<span itemprop="name">Banyo Library Wifi</span>
+							<br/><br/>
+							<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+							    <span itemprop="streetAddress">Delaware St</span>
+							    <span itemprop="addressLocality">Chermside</span>,
+							    <span itemprop="addressRegion">QLD</span>
+							 </div>
+							 <br/>
+							 <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+							    Latitude: 40 deg 44 min 54.36 sec N <br/>
+							    Longitude: 73 deg 59 min 8.5 dec W
+							    <meta itemprop="latitude" content="40.75" />
+							    <meta itemprop="longitude" content="73.98" />
+							  </div>
+						</div>
+						<div class="content-foot">
+							<span class="foot-like">10 - <a class="like-button" href="#" >Like </a></span>  
+							<span class="foot-dislike">10 - <a class="dislike-button" href="#">Dislike </a></span>
+						</div>
+					</div>
+
+					<div class="content">
+						<div class="content-head">
+							<a href="./content.html" >Ashgrove Library Wifi</a>
+						</div>
+						<div class="content-main" itemscope itemtype="http://schema.org/Place">
+							<span itemprop="name">Ashgrove Library Wifi</span>
+							<br/><br/>
+							<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+							    <span itemprop="streetAddress">Ashgrove</span>
+							    <span itemprop="addressLocality">Brisbane</span>,
+							    <span itemprop="addressRegion">QLD</span>
+							 </div>
+							 <br/>
+							 <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+							    Latitude: 40 deg 44 min 54.36 sec N <br/>
+							    Longitude: 73 deg 59 min 8.5 dec W
+							    <meta itemprop="latitude" content="40.75" />
+							    <meta itemprop="longitude" content="73.98" />
+							  </div>
+						</div>
+						<div class="content-foot">
+							<span class="foot-like">10 - <a class="like-button" href="#" >Like </a></span>  
+							<span class="foot-dislike">10 - <a class="dislike-button" href="#">Dislike </a></span>
+						</div>
+					</div>
+					<div class="content"> 
+						<div class="content-head">
+							<a href="./content.html" >Banyo Library Wifi</a>
+						</div>
+						<div class="content-main" itemscope itemtype="http://schema.org/Place">
+							<span itemprop="name">Banyo Library Wifi</span>
+							<br/><br/>
+							<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+							    <span itemprop="streetAddress">284 St Vincents Road</span>
+							    <span itemprop="addressLocality">Banyo 4014</span>,
+							    <span itemprop="addressRegion">QLD</span>
+							 </div>
+							 <br/>
+							 <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+							    Latitude: 40 deg 44 min 54.36 sec N <br/>
+							    Longitude: 73 deg 59 min 8.5 dec W
+
+							    <meta itemprop="latitude" content="40.75" />
+							    <meta itemprop="longitude" content="73.98" />
+							  </div>
+						</div>
+						<div class="content-foot">
+							<span class="foot-like">10 - <a class="like-button" href="#" >Like </a></span>  
+							<span class="foot-dislike">10 - <a class="dislike-button" href="#">Dislike </a></span>
+						</div>
+					</div>
+				</div>
