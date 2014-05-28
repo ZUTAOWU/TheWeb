@@ -140,7 +140,7 @@
 					</div>
 				</div> -->
 			</div>
-			<div class="footer" id="footer">Copyright 2014</div>
+			<?php include 'footer.inc';?>
 
 		</div>
 		<script type="text/javascript">
