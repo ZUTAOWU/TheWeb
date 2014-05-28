@@ -39,15 +39,20 @@
 			$submitCommit = array_key_exists('submit-commit', $_POST) ? $_POST['submit-commit'] : "";
 			if($submitCommit == 1) {
 				if(insert_comment($comment, $rating, $_SESSION['username'], $parsedURL)) {
-
+					header("Location: {$_SERVER["REQUEST_URI"]}");
 				}else {
 					alert("add comment fail!");
 				}
 			}
-			$rows = sql_query("SELECT * FROM Items I where I.ID = '$parsedURL' ");
-			$row = $rows[0];
 
-			$rows_review = sql_query("SELECT * FROM Reviews R, Members M where R.ITEMID = '$parsedURL' and R.USERID = M.ID order by R.POSTDATE desc");
+			if($parsedURL=="") {
+				header("Location: index.php");
+			} else {
+				$rows = sql_query("SELECT * FROM Items I where I.ID = '$parsedURL' ");
+				$row = $rows[0];
+				$rows_review = sql_query("SELECT * FROM Reviews R, Members M where R.ITEMID = '$parsedURL' and R.USERID = M.ID order by R.POSTDATE desc");
+			}
+			
 		?>
 	</head>
 	<body>
@@ -88,11 +93,11 @@
 					</br>
 					</br>
 					Rate: 
+					<input type="radio" name="rating" value="1">1 &nbsp;
+					<input type="radio" name="rating" value="2">2 &nbsp;
+					<input type="radio" name="rating" value="3">3 &nbsp;
+					<input type="radio" name="rating" value="4">4 &nbsp;
 					<input type="radio" name="rating" value="5" checked="true">5
-					<input type="radio" name="rating" value="4">4
-					<input type="radio" name="rating" value="3">3
-					<input type="radio" name="rating" value="2">2
-					<input type="radio" name="rating" value="1">1
 					</br>
 					</br>
 					<input name='submit-commit' value='1' style='display:none;'/>

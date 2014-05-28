@@ -45,7 +45,7 @@
 				$search_rate = $_GET['search-rate'];
 				if($search_rate <=5 && $search_rate >= 1) {
 					//example: select * from Items I where (select avg(RATE) as rateAVG from Reviews R where I.ID = R.ITEMID ) =5;
-					$select_sql = $select_sql . " and ( select avg(RATE) as rateAVG from Reviews R where I.ID = R.ITEMID ) = $search_rate";
+					$select_sql = $select_sql . " and ( select cast(AVG(RATE) as integer) as rateAVG from Reviews R where I.ID = R.ITEMID ) = $search_rate";
 				}
 			}
 
@@ -67,8 +67,8 @@
 					<div class="search-box">
 						<span> Search: <input class="search-input-box" type="text" name="search-name" />
 						</span>
-						<span>
-						Rate: <select class="search-select-box" name="search-rate" value='5'>
+						<span >
+						Average Rate: <select class="search-select-box" name="search-rate" value='5'>
 								  <option value="all">all</option>
 								  <option value="5">5</option>
 								  <option value="4">4</option>
@@ -78,9 +78,9 @@
 							  </select> 
 						</span>
 						<br/>
-						<br/>
-						<span>
-						<input id = "search-local" type="checkbox" name="search_local" value="0" /> search your location: 
+						<!-- <br/> -->
+						<span >
+							<input id = "search-local" type="checkbox" name="search_local" value="0" /> search your location: 
 
 						</span>
 						<br/>
@@ -129,8 +129,8 @@
 							  </div>
 						</div>
 						<div class="content-foot">
-							<span class="foot-like">10 - <a class="like-button" href="#" >Like </a></span>  
-							<span class="foot-dislike">10 - <a class="dislike-button" href="#">Dislike </a></span>
+			<!-- 				<span class="foot-like">10 - <a class="like-button" href="#" >Like </a></span>  
+							<span class="foot-dislike">10 - <a class="dislike-button" href="#">Dislike </a></span> -->
 						</div>
 					</div>
 
@@ -140,13 +140,17 @@
 					?>	
 					<div class="page"> 
 						<?php
-							echo get_page_html($current_page_num, $total_page_num);
+							if(count($rows) <= 0) {
+								echo "No Items";
+							} else {
+								echo get_page_html($current_page_num, $total_page_num);
+							}
 						?>
 					</div>
 					</div>
 				</div>
 				</div>
-			<div class="footer" id="footer">Copyright 2014</div>
+			<?php include 'footer.inc';?>
 		</div>
 		<script type="text/javascript">
 
@@ -166,7 +170,7 @@
 
 		<?php 
 			foreach($rows as $row) {
-				echo "googlemap_setMaker({$row['Latitude']}, {$row['Longitude']}, map);";
+				echo "googlemap_setMaker({$row['Latitude']}, {$row['Longitude']}, map, '{$row['ID']}');";
 			}
 		?>
 

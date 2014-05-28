@@ -4,8 +4,11 @@
 	}
 	session_start();
 	define('DB_HOST', 'localhost');  
-	define('DB_USER', 'n8975698');  
-	define('DB_PASS', 'PDaOVvSGw4iMhoda');  
+	//define('DB_USER', 'n8975698');  
+	//define('DB_PASS', 'PDaOVvSGw4iMhoda');  
+	//define('DB_DATABASENAME', 'n8975698');
+	define('DB_USER', 'root');  
+	define('DB_PASS', 'mysql');  
 	define('DB_DATABASENAME', 'n8975698');
 	$con;
 	function sql_connect() {
@@ -100,8 +103,20 @@
 			$_GET['page'] = $current_page_num + 1;
 			$page_html = $page_html . "<a href='{$_SERVER['PHP_SELF']}?".http_build_query($_GET)."'>Next </a>&nbsp;&nbsp;&nbsp;&nbsp;";
 		}
-		$page_html = $page_html . " Page:  $current_page_num  | Total : $total_page_num";
+		$page_html = $page_html . " Page:  $current_page_num  | Total pages : $total_page_num";
 		return $page_html;
+	}
+
+	function is_user_exist($username) {
+		global $con;
+		sql_connect();
+		$result = mysqli_query($con,"SELECT COUNT(*) FROM Members where USERNAME = '$username'");
+		$row = mysqli_fetch_array($result);
+		if($row[0]!=0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	function validate_signUp($username, $email, $password, $repassword, $sex) {
@@ -121,13 +136,19 @@
 			return false;
 		}
 
+		if($password != $repassword) {
+			alert("Please input the same password!");
+			return false;
+		}
+
 		return true;
 	}
 
-	function insert_signup($username, $email, $password, $repassword, $sex) {
+	function insert_signup($username, $email, $password, $sex) {
 		global $con;
 		sql_connect();
 		$id = uniqid();
+		$password = md5($password);
 		$isSuccess = mysqli_query($con,"insert into Members values ('$id','$username','$email', '$password', '$sex')");
 		sql_disconnect();
 		return $isSuccess;
@@ -136,6 +157,14 @@
 	function check_login($username, $password) {
 		global $con;
 		sql_connect();
+		$password = md5($password);
+
+		if(!is_user_exist($username)) {
+			alert("User Name does not exist !");
+			sql_disconnect();
+			return false;
+		}
+
 		$result = mysqli_query($con,"select * from Members where USERNAME = '$username' and PASSWORD ='$password'");
 		$count = mysqli_num_rows($result);
 		mysqli_free_result($result);  
@@ -144,7 +173,7 @@
 		if($count > 0) {
 			return true;
 		} else {
-			alert("Login Failure!");
+			alert("Wrong password!");
 			return false;
 		}
 	}
@@ -170,6 +199,61 @@
 			return $isSuccess;
 		}
 
+	}
+
+	function import_from_file($file_name) {
+		global $con;
+		sql_connect();
+		$row = 1;
+		if (($handle = fopen($file_name, "r")) !== FALSE) {
+			while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+				$num = count($data);
+				//echo "<p> $num fields in line $row: <br /></p>\n";
+
+				$insertStr = "INSERT INTO Items VALUES ("."'".uniqid()."',";
+				for ($c=0; $c < $num; $c++) {
+					//echo $data[$c] . "<br />\n";
+					if($c < $num - 2){
+						$insertStr .= "'" . $data[$c] . "',";
+					} else if($c < $num - 1){
+						$insertStr .=  $data[$c] . ", ";
+					} else {
+						$insertStr .=  $data[$c];
+					}
+				}
+				$insertStr .= ")";
+				//echo "$insertStr </br>";
+				if($row != 1) {
+					//import
+					mysqli_query($con,$insertStr);
+				}
+				$row++;
+			}
+			fclose($handle);
+			alert('import success!');
+		} else {
+			alert('import fail!');
+		}
+		sql_disconnect();
+	}
+
+	function clear_Items() {
+		global $con;
+		sql_connect();
+		$isSuccess = mysqli_query($con, "delete from Items");
+		sql_disconnect();
+	}
+	function clear_Reviews() {
+		global $con;
+		sql_connect();
+		$isSuccess = mysqli_query($con, "delete from Reviews");
+		sql_disconnect();
+	}
+	function clear_Members() {
+		global $con;
+		sql_connect();
+		$isSuccess = mysqli_query($con, "delete from Members where USERNAME <> 'admin'");
+		sql_disconnect();
 	}
 
 ?>

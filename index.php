@@ -47,7 +47,7 @@
 
 			$page_display_num = 3;
 			$current_page_num = parse_pagenum();
-			$rows = sql_query_page("SELECT * FROM Items",$current_page_num, $page_display_num); 
+			$rows = sql_query_page("select * from Items I left join (select cast(AVG(RATE) as integer) as RATE, ITEMID from Reviews group by ITEMID) R  on  I.ID = R.ITEMID",$current_page_num, $page_display_num); 
 			$counts = sql_query_table_count("Items");
 			$total_page_num = get_total_pagenum($page_display_num, $counts);
 			//alert($counts);
@@ -69,7 +69,9 @@
 				<!--left box use to show the place information-->
 				<!--include 3 hard-coded information -->
 				<div class="left-box">
-					<?php 
+					<?php
+
+
 						foreach($rows as $row) {
 					?>
 					<div class="content">
@@ -93,8 +95,15 @@
 							  </div>
 						</div>
 						<div class="content-foot">
-							<span class="foot-like">10 - <a class="like-button" href="#" >Like </a></span>  
-							<span class="foot-dislike">10 - <a class="dislike-button" href="#">Dislike </a></span>
+							<span class="foot-like">
+								<?php 
+									if($row['RATE'])
+										echo $row['RATE'];
+									else 
+										echo 'No ';
+								?> 
+								- <a class="like-button" href="#" >Rate </a></span>  
+							<!-- <span class="foot-dislike">10 - <a class="dislike-button" href="#">Dislike </a></span> -->
 						</div>
 					</div>
 
@@ -105,7 +114,12 @@
 					
 					<div class="page"> 
 						<?php
-							echo get_page_html($current_page_num, $total_page_num);
+							if(count($rows) <= 0) {
+								echo "No Items";
+							} else {
+								echo get_page_html($current_page_num, $total_page_num);
+							}
+							
 						?>
 						
 					</div>
@@ -122,14 +136,14 @@
 					</div>
 				</div>
 			</div>
-			<div class="footer" id="footer">Copyright 2014</div>
+			<?php include 'footer.inc';?>
 		</div>
 		<script>
 		//create the maps on web page
 		var map = googlemap_createMap("map-canvas");
 		<?php 
 			foreach($rows as $row) {
-				echo "googlemap_setMaker({$row['Latitude']}, {$row['Longitude']}, map);";
+				echo "googlemap_setMaker({$row['Latitude']}, {$row['Longitude']}, map, '{$row['ID']}');";
 			}
 		?>
 		googlemap_createMap("map-canvas2");

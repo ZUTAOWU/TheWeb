@@ -91,3 +91,35 @@
 .signup-box {
 	margin:20px 20px;
 }
+
+.search-main {
+	margin:0 auto;
+	border: 2px solid white;
+	background-color:white;
+	max-width:600px;
+	min-height:100px;
+	border-radius:7px;
+	box-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.28);
+	margin-top: 100px;
+	float:none;
+	width:90%;
+}
+
+.search-result {
+	margin:0 auto;
+	max-width:600px;
+	min-height:500px;
+	float:none;
+	margin-top: 30px;
+	width:90%;
+	/*border: 1px solid red;*/
+}
+
+.search-input-box {
+	width: 100px;
+	/*border: 1px solid red;*/
+}
+.search-select-box {
+	width: 100px;
+	/*border: 1px solid red;*/
+}

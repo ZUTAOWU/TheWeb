@@ -6,7 +6,7 @@ Name: ZUTAO WU
 ID: n8975698
 
 Developer2:
-Name: Abdulraman Alhashimi	
+Name: Abdulrahman Alhashimi	
 ID: n8655251
 
 --------------------------------------

@@ -72,25 +72,28 @@ function googlemap_createMapByPosition(mapCanvasID, Latitude, Longitude) {
 }
 
 // click maker in map will on the html to show the place detail
-function clickMakerOpenDetail() {
-	window.open("./content.html","_self")
-}
+// function clickMakerOpenDetail(marker) {
+// 	window.open("./content.php?id="+marker.id,"_self");
+// }
 
 // set a Maker on map, base on Latitude and Longitude
-function googlemap_setMaker(Latitude, Longitude, map) {
+function googlemap_setMaker(Latitude, Longitude, map, item_id) {
 	var myLatlng = new google.maps.LatLng(Latitude, Longitude);
+	var image = 'image/Map-Marker2.png';
 	var marker = new google.maps.Marker({
-	position: myLatlng,
-	icon: {
-		strokeColor: '#f04c5c',
-		path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
-		scale: 4
-	},
-	draggable: true,
-	map: map
+		position: myLatlng,
+		// icon: {
+		// 	strokeColor: '#f04c5c',
+		// 	path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+		// 	scale: 4
+		// },
+		icon: image,
+		draggable: true,
+		map: map,
+		id: item_id
 	});
 
-	google.maps.event.addListener(marker, 'click', clickMakerOpenDetail);
+	google.maps.event.addListener(marker, 'click', function(){window.open("./content.php?"+marker.id,"_self");});
 }
 
 function googlemap_setMakerAndArea(Latitude, Longitude, map, radius) {
@@ -118,7 +121,7 @@ function googlemap_setMakerAndArea(Latitude, Longitude, map, radius) {
     };
     cityCircle = new google.maps.Circle(sunCircle)
     cityCircle.bindTo('center', marker, 'position');
-	google.maps.event.addListener(marker, 'click', clickMakerOpenDetail);
+	//google.maps.event.addListener(marker, 'click', clickMakerOpenDetail('asd'));
 }
 
 //change the current menu color
@@ -134,6 +137,10 @@ function setCurrentMenu() {
 	
 	if(text == 'SignUp') {
 		$('#menu-signup').addClass('current');
+	}
+
+	if(text == 'About us') {
+		$('#menu-aboutus').addClass('current');
 	}
 }
 

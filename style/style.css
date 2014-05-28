@@ -120,11 +120,14 @@ a{
 .button {
 	min-width:10px;
 	border: 1px solid #969696;
+	background-color:#7ED061;
+	color:white;
 	border-radius:5px;
 	padding:5px;
 }
 .button:hover {
 	cursor:pointer;
+	background-color:#59A040;
 }
 
 .page {
@@ -354,6 +357,7 @@ a{
 	margin:0 auto;
 	margin-top:20px;
 	margin-left:20px;
+
 }
 
 .search-box > span {
@@ -446,4 +450,93 @@ a{
 	color: #f04c5c;
 	float:right;
 	margin-right:20px;
+}
+
+/*-----aboutus-------*/
+
+.aboutus {
+	/*border:1px solid red;*/
+	margin:0 auto;
+	width:70%;
+	margin-top:100px;
+	height:200px;
+
+	border: 2px solid white;
+	background-color:white;
+	margin-top: 100px;
+	border-radius:7px;
+	box-shadow: 1px 1px 5px black;
+	min-width:800px;
+
+}
+
+.abdul {
+	margin:0 auto;
+	text-align:center;
+	/*width:48%;*/
+	/*float:left;*/
+	/*border-right:1px solid black;*/
+	/*height:500px;*/
+	/*margin-top:50px;*/
+}
+
+.tony {
+	margin:0 auto;
+	text-align:center;
+	/*width:48%;*/
+	/*float:right;*/
+	/*border:1px solid red;*/
+	/*height:500px;*/
+	/*margin-top:50px;*/
+}
+
+/*.about-pic {
+	width:120px;
+	height:150px;
+	border:1px solid black;
+	float:left;
+	margin-top:50px;
+	margin-left:50px;
+
+}*/
+
+/*.abdul-pic {
+	background-image: url('/image/abdul.png');
+	background-repeat:no-repeat;
+}
+
+.tony-pic {
+	background-image: url('/image/tony.png');
+	background-repeat:no-repeat;
+}*/
+
+.about-discription {
+	margin-top:40px;
+	/*width:60%;*/
+	/*height:300px;*/
+	/*border:1px solid red;*/
+	/*float:right;*/
+	/*margin-top:50px;*/
+}
+
+/*-----admin-------*/
+
+.admin {
+	/*border:1px solid red;*/
+	margin:0 auto;
+	width:70%;
+	margin-top:100px;
+	height:500px;
+
+	border: 2px solid white;
+	background-color:white;
+	margin-top: 100px;
+	border-radius:7px;
+	box-shadow: 1px 1px 5px black;
+	min-width:800px;
+
+}
+
+.admin-main {
+	margin:30px;
 }
