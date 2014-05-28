@@ -78,7 +78,7 @@
 							  </select> 
 						</span>
 						<br/>
-						<!-- <br/> -->
+						<br/>
 						<span >
 							<input id = "search-local" type="checkbox" name="search_local" value="0" /> search your location: 
 
