@@ -37,14 +37,16 @@
 		<![endif]-->
 
 		<?php
-
+			// add core functions
 			require('core.php'); 
 
+			// if logout, then go to index.php
 			if(array_key_exists('logout', $_GET) && $_GET['logout'] == 'true'){
 				session_destroy();
 				header("Location: index.php");
 			}
 
+			//select data from database and each page show 3 items
 			$page_display_num = 3;
 			$current_page_num = parse_pagenum();
 			$rows = sql_query_page("select * from Items I left join (select cast(AVG(RATE) as integer) as RATE, ITEMID from Reviews group by ITEMID) R  on  I.ID = R.ITEMID",$current_page_num, $page_display_num); 
@@ -114,16 +116,14 @@
 					
 					<div class="page"> 
 						<?php
+							// show page selection
 							if(count($rows) <= 0) {
 								echo "No Items";
 							} else {
 								echo get_page_html($current_page_num, $total_page_num);
 							}
-							
 						?>
-						
 					</div>
-
 				</div>
 				<!--right box use to show the maps-->
 				<div class="right-box">

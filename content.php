@@ -31,13 +31,16 @@
 		<title>Content</title>
 		<?php
 			require('core.php'); 
+
+			//if has summit comments request, then handle submission
 			$url = $_SERVER['REQUEST_URI'];
 			$parsedURL = parse_url($url,PHP_URL_QUERY);
-
+			// submit comment
 			$comment = array_key_exists('comment', $_POST) ? $_POST['comment'] : "";
 			$rating = array_key_exists('rating', $_POST) ? $_POST['rating'] : "";
 			$submitCommit = array_key_exists('submit-commit', $_POST) ? $_POST['submit-commit'] : "";
 			if($submitCommit == 1) {
+				// insert review, or comments
 				if(insert_comment($comment, $rating, $_SESSION['username'], $parsedURL)) {
 					header("Location: {$_SERVER["REQUEST_URI"]}");
 				}else {
@@ -46,8 +49,10 @@
 			}
 
 			if($parsedURL=="") {
+				//if url not include Item ID, then go to index page
 				header("Location: index.php");
 			} else {
+				// search Item by ID, then show the items details
 				$rows = sql_query("SELECT * FROM Items I where I.ID = '$parsedURL' ");
 				$row = $rows[0];
 				$rows_review = sql_query("SELECT * FROM Reviews R, Members M where R.ITEMID = '$parsedURL' and R.USERID = M.ID order by R.POSTDATE desc");
@@ -125,20 +130,6 @@
 				<?php } ?>
 
 
-<!-- 				<div class="comment-content">
-					<div class="content" itemscope itemtype="http://schema.org/Review"> 
-						<div class="content-head">
-							<span itemprop="author">D7MI</span>
-						</div>
-						<div class="content-main" >
-							<span itemprop="reviewBody">I dont like this WIFI hotpot.</span>
-						</div>
-						<div class="content-foot">
-							<meta itemprop="datePublished" content="2014-06-15">June 15, 2014
-							<span class="comment-dislike" itemprop="reviewRating">Dislike</span>
-						</div>
-					</div>
-				</div> -->
 			</div>
 			<?php include 'footer.inc';?>
 

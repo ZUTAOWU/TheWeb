@@ -13,6 +13,7 @@
 		<title>Search</title>
 		<?php
 			require('core.php'); 
+			// each page show 3 items
 			$page_display_num = 3;
 			$select_sql = "SELECT * FROM Items I ";
 			$search_name="";
@@ -20,27 +21,27 @@
 			$search_local="";
 
 			if(array_key_exists('search-name', $_GET)){
+				//if search name exist, then seach ItemName, address, or surburb 
 				global $search_name; 
 				$search_name = $_GET['search-name'];
 				$select_sql = $select_sql . " where (NAME like '%$search_name%' or ADDRESS like '%$search_name%' or SUBURB like '%$search_name%') ";
 			}
 
 			if(array_key_exists('searchLocal', $_GET)){
+				// if search current posion, then search 1km radius scope.
 				//1 Km = approximately 0.009 degrees
 				global $search_local;
 				$search_local = $_GET['searchLocal'];
-				//alert('$searchLocal');
-				//$select_sql = "SELECT * FROM Items where Latitude < ";
 				if(array_key_exists('lati', $_GET) and array_key_exists('logi', $_GET)){
 					$lati = $_GET['lati'];
 					$logi = $_GET['logi'];
 					$select_sql = $select_sql . " and  Latitude < " . ($lati + 0.09) . " and Latitude > " . ($lati - 0.09) .  " and  Longitude < " . ($logi + 0.09) . " and Longitude > " . ($logi - 0.09);
-					// echo $select_sql;
 				}
 
 			}
 
 			if(array_key_exists('search-rate', $_GET)){
+				// if search rate, search average rate of items
 				global $search_rate ;
 				$search_rate = $_GET['search-rate'];
 				if($search_rate <=5 && $search_rate >= 1) {
@@ -140,6 +141,7 @@
 					?>	
 					<div class="page"> 
 						<?php
+							// show page selection
 							if(count($rows) <= 0) {
 								echo "No Items";
 							} else {

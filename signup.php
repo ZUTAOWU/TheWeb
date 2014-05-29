@@ -15,24 +15,23 @@
 	<?php
 		require('core.php'); 
 		if(!empty($_POST)){ 
+			//if has post then get sign up information
 			$username = array_key_exists('username', $_POST) ? $_POST['username'] : "";
 			$email = array_key_exists('email', $_POST) ? $_POST['email'] : "";
 			$password = array_key_exists('password', $_POST) ? $_POST['password'] : "";
 			$repassword = array_key_exists('repassword', $_POST) ? $_POST['repassword'] : "";
 			$sex = array_key_exists('sex', $_POST) ? $_POST['sex'] : "";
+			// if pass php validate, then insert user information to database
 			if (validate_signUp($username, $email, $password, $repassword, $sex)) {
 				if(insert_signup($username, $email, $password, $sex)) {
+					// if signup success, then create session and login
 					 session_start();
 			 		 $_SESSION['username'] = $username;
 			 		 $_SESSION['email'] = $email;
 			 		 header('Location:  index.php');
 				}
 			}
-
-
-		} else {
-		}
-
+		} 
 	?>
 	
 	<body>
