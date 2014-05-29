@@ -9,12 +9,12 @@
 	session_start();
 	// common define for MYSQL
 	define('DB_HOST', 'localhost');  
-	//define('DB_USER', 'n8975698');  
-	//define('DB_PASS', 'PDaOVvSGw4iMhoda');  
-	//define('DB_DATABASENAME', 'n8975698');
-	define('DB_USER', 'root');  
-	define('DB_PASS', 'mysql');  
+	define('DB_USER', 'n8975698');  
+	define('DB_PASS', 'PDaOVvSGw4iMhoda');  
 	define('DB_DATABASENAME', 'n8975698');
+	//define('DB_USER', 'root');  
+	//define('DB_PASS', 'mysql');  
+	//define('DB_DATABASENAME', 'n8975698');
 	$con;
 
 	//Mysql connection
@@ -237,7 +237,7 @@
 			while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 				$num = count($data);
 				//echo "<p> $num fields in line $row: <br /></p>\n";
-
+				// insert data to item table
 				$insertStr = "INSERT INTO Items VALUES ("."'".uniqid()."',";
 				for ($c=0; $c < $num; $c++) {
 					//echo $data[$c] . "<br />\n";

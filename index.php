@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-		<!-- Meta data for mobile device display -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-		<link href="./style/style.css" rel="stylesheet" type="text/css"/>
-		<!-- smallDevice.css for small screen device -->
-		<link href="./style/smallDevice.css" rel="stylesheet" type="text/css" media="only screen and (max-width: 900px), only screen and (max-device-width: 480px)" />
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
-		<script  type="text/javascript" src="./js/main.js" ></script>
+		<?php include 'head.inc';?>
 		<title>Brisbane Life</title>
 		<!-- Meta data for Open Graph protocol -->
 		<meta property="og:title" content="Brisbane Life" />
@@ -49,7 +41,8 @@
 			//select data from database and each page show 3 items
 			$page_display_num = 3;
 			$current_page_num = parse_pagenum();
-			$rows = sql_query_page("select * from Items I left join (select cast(AVG(RATE) as integer) as RATE, ITEMID from Reviews group by ITEMID) R  on  I.ID = R.ITEMID",$current_page_num, $page_display_num); 
+			//$rows = sql_query_page("select * from Items I left join (select cast(AVG(RATE) as integer) as RATE, ITEMID from Reviews group by ITEMID) R  on  I.ID = R.ITEMID",$current_page_num, $page_display_num); 
+			$rows = sql_query_page("select * from Items I left join (select AVG(RATE) as RATE, ITEMID from Reviews group by ITEMID) R  on  I.ID = R.ITEMID",$current_page_num, $page_display_num); 
 			$counts = sql_query_table_count("Items");
 			$total_page_num = get_total_pagenum($page_display_num, $counts);
 			//alert($counts);
