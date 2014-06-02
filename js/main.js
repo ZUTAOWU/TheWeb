@@ -298,6 +298,7 @@ function search_form_submit() {
 	var searchName = $(".search-input-box").val();
 	var searchRate = $(".search-select-box").val();
 	var searchLocal = $("#search-local").val();
+	var searchLocalRadius = $("#search-local-radius").val();
 
 	url += 'search-name=' + searchName + '&search-rate=' + searchRate ;
 	if($('#search-local').is(':checked')) {
@@ -312,7 +313,7 @@ function search_form_submit() {
 			    var lng = position.coords.longitude;
 			   // alert(lat);
 			    url += '&lati=' + lat + '&logi=' + lng;
-			    url += '&searchLocal=' + searchLocal;
+			    url += '&searchLocal=' + searchLocal + "&searchLocalRadius=" + searchLocalRadius;
 				location.href=url;
 				}, function(error) {
 				    clearTimeout(location_timeout);

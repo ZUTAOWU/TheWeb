@@ -1,3 +1,4 @@
+<!--include all menu-->
 <div class="menu-div" id="menu-div">
 	<nav class="nav">
 		<ul class="menu">
@@ -20,12 +21,15 @@
 	</nav>
 	<div id='login' class="login">
 		<?php 
+			// login
+			// check login post session
 			$login = array_key_exists('login', $_POST) ? $_POST['login'] : "";
 			$username = array_key_exists('username', $_POST) ? $_POST['username'] : "";
 			$password = array_key_exists('password', $_POST) ? $_POST['password'] : "";
 			if($login == 1) {
 				if(check_login($username, $password)) {
 					//session_start();
+					// if login success, session store the username and password
 		 		 	$_SESSION['username'] = $username;
 		 		 	$_SESSION['password'] = $password;
 				}
@@ -34,6 +38,7 @@
 				echo "Welcome {$_SESSION['username']}&nbsp;&nbsp;&nbsp;";
 				echo "<a class='login-button blue-button' href='index.php?logout=true' >Logout</a>&nbsp;&nbsp;&nbsp;";
 				if($_SESSION['username'] == 'admin') {
+					// if admin login, show the admin page, to login
 					echo "<a class='login-button blue-button' href='admin.php' >Admin Page</a>&nbsp;&nbsp;&nbsp;";
 				}
 			} else {

@@ -9,7 +9,33 @@ Developer2:
 Name: Abdulrahman Alhashimi	
 ID: n8655251
 
+
 --------------------------------------
+
+Assignment2:
+
+--------------------------------------
+
+We finish Challenge Tasks.
+
+when use Admin account login, In the menu there is a "Admin Page" link
+
+In this web site, admin can clear the data and import data from files
+
+Admin Account: admin
+
+Admin Password: admin
+
+Our data base files is in /database/database.sql
+
+
+
+--------------------------------------
+
+Assignment1:
+
+--------------------------------------
+
 Our web page include contents as blow:
 
 1 search form

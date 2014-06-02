@@ -1,0 +1,59 @@
+[30-May-2014 00:48:13 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 00:48:13 Australia/Brisbane] PHP Warning:  Unknown: open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-May-2014 00:48:13 Australia/Brisbane] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-May-2014 00:48:25 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 00:48:25 Australia/Brisbane] PHP Warning:  Unknown: open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-May-2014 00:48:25 Australia/Brisbane] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-May-2014 00:48:26 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 00:48:26 Australia/Brisbane] PHP Notice:  Undefined index: username in /home/jail/home/n8975698/public_html/a2/admin.php on line 9
+[30-May-2014 00:48:26 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 00:48:26 Australia/Brisbane] PHP Warning:  Unknown: open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-May-2014 00:48:26 Australia/Brisbane] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-May-2014 00:48:34 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 00:48:34 Australia/Brisbane] PHP Warning:  Unknown: open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-May-2014 00:48:34 Australia/Brisbane] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-May-2014 00:48:36 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 00:48:36 Australia/Brisbane] PHP Notice:  Undefined index: username in /home/jail/home/n8975698/public_html/a2/admin.php on line 9
+[30-May-2014 00:48:36 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 00:48:36 Australia/Brisbane] PHP Warning:  Unknown: open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-May-2014 00:48:36 Australia/Brisbane] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-May-2014 00:48:40 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 00:48:40 Australia/Brisbane] PHP Warning:  Unknown: open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-May-2014 00:48:40 Australia/Brisbane] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-May-2014 00:48:43 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 00:48:43 Australia/Brisbane] PHP Warning:  Unknown: open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-May-2014 00:48:43 Australia/Brisbane] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-May-2014 00:48:49 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 00:48:49 Australia/Brisbane] PHP Warning:  Unknown: open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-May-2014 00:48:49 Australia/Brisbane] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-May-2014 00:48:54 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 00:48:54 Australia/Brisbane] PHP Warning:  Unknown: open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-May-2014 00:48:54 Australia/Brisbane] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-May-2014 00:48:55 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 00:48:55 Australia/Brisbane] PHP Notice:  Undefined index: username in /home/jail/home/n8975698/public_html/a2/admin.php on line 9
+[30-May-2014 00:48:55 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 00:48:55 Australia/Brisbane] PHP Warning:  Unknown: open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-May-2014 00:48:55 Australia/Brisbane] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-May-2014 01:38:44 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 01:38:44 Australia/Brisbane] PHP Warning:  Unknown: open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-May-2014 01:38:44 Australia/Brisbane] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-May-2014 01:38:52 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 01:38:52 Australia/Brisbane] PHP Warning:  Unknown: open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-May-2014 01:38:52 Australia/Brisbane] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-May-2014 02:00:35 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 02:00:35 Australia/Brisbane] PHP Warning:  Unknown: open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-May-2014 02:00:35 Australia/Brisbane] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-May-2014 02:00:48 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 02:00:48 Australia/Brisbane] PHP Warning:  Unknown: open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-May-2014 02:00:48 Australia/Brisbane] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-May-2014 02:05:17 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 02:05:17 Australia/Brisbane] PHP Warning:  Unknown: open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-May-2014 02:05:17 Australia/Brisbane] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-May-2014 02:05:24 Australia/Brisbane] PHP Warning:  session_start(): open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in /home/jail/home/n8975698/public_html/a2/core.php on line 9
+[30-May-2014 02:05:24 Australia/Brisbane] PHP Warning:  Unknown: open(/tmp/sess_31rb278fk3pt79ilnmp6d56ac6, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-May-2014 02:05:24 Australia/Brisbane] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[30-May-2014 04:15:37 Australia/Brisbane] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/jail/home/n8975698/public_html/a2/search.php on line 166
+[30-May-2014 04:20:02 Australia/Brisbane] PHP Notice:  Undefined index: searchLocalRadius in /home/jail/home/n8975698/public_html/a2/search.php on line 27
+[30-May-2014 04:20:17 Australia/Brisbane] PHP Notice:  Undefined index: searchLocalRadius in /home/jail/home/n8975698/public_html/a2/search.php on line 27
+[30-May-2014 04:31:54 Australia/Brisbane] PHP Notice:  Undefined index: searchLocalRadius in /home/jail/home/n8975698/public_html/a2/search.php on line 27
+[30-May-2014 04:32:28 Australia/Brisbane] PHP Notice:  A session had already been started - ignoring session_start() in /home/jail/home/n8975698/public_html/a2/signup.php on line 21

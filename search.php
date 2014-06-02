@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head> 
-		<!-- Meta data for mobile device display -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-		<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-		<link href="./style/style.css" rel="stylesheet" type="text/css"/>
-		<!-- smallDevice.css for small screen device -->
-		<link href="./style/smallDevice.css" rel="stylesheet" type="text/css" media="only screen and (max-width: 900px), only screen and (max-device-width: 480px)" />
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
-		<script  type="text/javascript" src="./js/main.js" ></script>
+		<?php include 'head.inc';?>
 		<title>Search</title>
 		<?php
 			require('core.php'); 
@@ -32,10 +24,11 @@
 				//1 Km = approximately 0.009 degrees
 				global $search_local;
 				$search_local = $_GET['searchLocal'];
+				$search_local_radius = $_GET['searchLocalRadius'] * 0.09;
 				if(array_key_exists('lati', $_GET) and array_key_exists('logi', $_GET)){
 					$lati = $_GET['lati'];
 					$logi = $_GET['logi'];
-					$select_sql = $select_sql . " and  Latitude < " . ($lati + 0.09) . " and Latitude > " . ($lati - 0.09) .  " and  Longitude < " . ($logi + 0.09) . " and Longitude > " . ($logi - 0.09);
+					$select_sql = $select_sql . " and  Latitude < " . ($lati + $search_local_radius) . " and Latitude > " . ($lati - $search_local_radius) .  " and  Longitude < " . ($logi + $search_local_radius) . " and Longitude > " . ($logi - $search_local_radius);
 				}
 
 			}
@@ -46,7 +39,8 @@
 				$search_rate = $_GET['search-rate'];
 				if($search_rate <=5 && $search_rate >= 1) {
 					//example: select * from Items I where (select avg(RATE) as rateAVG from Reviews R where I.ID = R.ITEMID ) =5;
-					$select_sql = $select_sql . " and ( select cast(AVG(RATE) as integer) as rateAVG from Reviews R where I.ID = R.ITEMID ) = $search_rate";
+					//$select_sql = $select_sql . " and ( select cast(AVG(RATE) as integer) as rateAVG from Reviews R where I.ID = R.ITEMID ) = $search_rate";
+					$select_sql = $select_sql . " and ( select AVG(RATE) as rateAVG from Reviews R where I.ID = R.ITEMID ) = $search_rate";
 				}
 			}
 
@@ -82,11 +76,15 @@
 						<br/>
 						<span >
 							<input id = "search-local" type="checkbox" name="search_local" value="0" /> search your location: 
-
+							<select id="search-local-radius" class="search-select-box-radius" name="search-radius" value='1'>
+								  <option value="1">1 KM</option>
+								  <option value="2">2 KM</option>
+								  <option value="3">3 KM</option>
+							 </select> 
 						</span>
 						<br/>
 						<div class="search-button">
-							<span class="button search-button" onclick="search_form_submit();"> search </span>
+							<span  class="button search-button" onclick="search_form_submit();"> search </span>
 							<!-- <span class="button search-button" onclick="document.getElementById('search-form').submit();"> search </span> -->
 						</div>
 
@@ -165,7 +163,8 @@
 			if(array_key_exists('lati', $_GET) and array_key_exists('logi', $_GET)){
 				$lati = $_GET['lati'];
 				$logi = $_GET['logi'];
-				echo " googlemap_setMakerAndArea($lati, $logi, map, 10000)";
+				$radius = $_GET['searchLocalRadius'];
+				echo " googlemap_setMakerAndArea($lati, $logi, map, 10000 * $radius  )";
 			}
 		?>
 
